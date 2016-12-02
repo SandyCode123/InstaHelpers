@@ -1,3 +1,20 @@
+
+-> Profile Management
+
+
+- Client Post question with amount to pay and whirl a circle to search for online users
+- Developer is Waiting for the client to choose. Will get buzz if selected by algo.
+- Developer Reads the question, accept if he/she can answer
+- If accepted, start video conferencing to solve the question.
+- If solution is satisfactory then client will mark it as solved.
+- #### We can help you hire by recruiters for strong profile #####
+
+
+
+This idea gives equal opportunity to every developer. Even if developer is unemployed, he/she has
+chance to get call by recruiter based on his/her real skill.
+
+
 Big Picture by HTML5 UP
 html5up.net | @ajlkn
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
