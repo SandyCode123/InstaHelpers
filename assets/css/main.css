@@ -1846,6 +1846,7 @@
 				margin: 0;
 			}
 
+			
 			.main.style2.left {
 				-moz-justify-content: -moz-flex-start;
 				-webkit-justify-content: -webkit-flex-start;
@@ -1853,6 +1854,7 @@
 				justify-content: flex-start;
 			}
 
+			
 			.main.style2.right {
 				-moz-justify-content: -moz-flex-end;
 				-webkit-justify-content: -webkit-flex-end;
@@ -1860,6 +1862,7 @@
 				justify-content: flex-end;
 			}
 
+			/* Class that specifies properties for left swipe*/
 			.main.style2.inactive.left > .content {
 				-moz-transform: translateX(-100%);
 				-webkit-transform: translateX(-100%);
@@ -1867,6 +1870,7 @@
 				transform: translateX(-100%);
 			}
 
+			/* Class that specifies properties for right swipe*/
 			.main.style2.inactive.right > .content {
 				-moz-transform: translateX(100%);
 				-webkit-transform: translateX(100%);
@@ -1919,10 +1923,18 @@
 			background-attachment: scroll !important;
 		}
 
+		@media screen and (max-width: 2510px) {
+
+			.main.style2 .content {
+				width: 80%; /* 40% */
+			}
+
+		}
+		
 		@media screen and (max-width: 1920px) {
 
 			.main.style2 .content {
-				width: 40%;
+				width: 80%; /* 40% */
 			}
 
 		}
@@ -1930,7 +1942,7 @@
 		@media screen and (max-width: 1280px) {
 
 			.main.style2 .content {
-				width: 50%;
+				width: 80%; /* 50% */
 			}
 
 		}
@@ -1938,11 +1950,11 @@
 		@media screen and (max-width: 1000px) {
 
 			.main.style2 .content {
-				width: 60%;
+				width: 80%; /* 60% */
 			}
 
 		}
-
+		
 		@media screen and (max-width: 736px) {
 
 			.main.fullscreen {
@@ -2105,19 +2117,19 @@
 
 /* One */
 
-	#one {
+	#client_one {
 		background: url("images/overlay.png"), url("../../images/one.jpg");
 		background-size: 256px 256px, cover;
-		background-attachment: fixed, fixed;
+		background-attachment: fixed, fixed !important;
 		background-position: top left, center center;
 	}
 
 /* Two */
 
-	#two {
+	#client_two {
 		background: url("images/overlay.png"), url("../../images/two.jpg");
 		background-size: 256px 256px, cover;
-		background-attachment: fixed, fixed;
+		background-attachment: fixed, fixed !important;
 		background-position: top left, center center;
 	}
 
