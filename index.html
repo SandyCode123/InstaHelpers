@@ -11,11 +11,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="assets/js/angular.min.js"></script>
+<script src="assets/js/angular-animate.min.js"></script>
+<script src="assets/js/angular-route.min.js"></script>
+<script src="assets/js/angular-aria.min.js"></script>
+<script src="assets/js/angular-messages.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
+ <script src="assets/js/angular-material.min.js"></script>
+<script src="assets/js/angular-ui-router.min.js"></script>
+<!-- taken from https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc.5/angular-material.js -->
+
+<link rel="stylesheet" type="text/css" href="assets/css/angular-material.css">
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 	</head>
-	<body>
-
+	<body ng-app="instahelpers">
+<div ng-controller="mainController as ctrl">
 		<!-- Header -->
 			<header id="header">
 				<h1>Big Picture</h1>
@@ -49,7 +60,7 @@
 									
 								</div>
 								<footer>
-									<a href="#one" class="button">Let's Do It</a>
+									<a href="#two" class="button">Let's Do It</a>
 								</footer>
 								
 							</article>
@@ -65,7 +76,7 @@
 									<p>We will pickup someone for you. Go on Instant Video conference to solve the issue. Just provide genuine feedback to the solution. We do not want anything in return.</p>
 								</div>
 								<footer>
-									<a href="#two" class="button">Let's Do It</a>
+									<a href="#client_one" class="button">Let's Do It</a>
 								</footer>
 							</article>
 							
@@ -76,85 +87,83 @@
 			</section>
 
 		<!-- One -->
-			<section id="one" class="main style2 right dark fullscreen">
+			<section id="client_one" class="main style2 right dark fullscreen">
 				<div class="content box style2">
 					<header>
-						<h2>What I Do</h2>
+						<h2>My Question is related to</h2>
 					</header>
-					<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
-					Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
-					id varius justo euismod in. Curabitur egestas consectetur magna.</p>
+					<md-content class="md-padding" layout="column">
+						<md-chips ng-model="ctrl.selectedVegetables" md-autocomplete-snap
+								  md-transform-chip="ctrl.transformChip($chip)"
+								  md-require-match="ctrl.autocompleteDemoRequireMatch">
+							<md-autocomplete md-selected-item="ctrl.selectedItem" md-search-text="ctrl.searchText"
+								 md-items="item in ctrl.querySearch(ctrl.searchText)"
+								 md-item-text="item.name"
+								 placeholder="Search for a vegetable">
+								<span md-highlight-text="ctrl.searchText">{{item.name}} :: {{item.type}}</span>
+							</md-autocomplete>
+							<md-chip-template>
+								<span>
+								  <strong>{{$chip.name}}</strong>
+								  <em>({{$chip.type}})</em>
+								</span>
+							</md-chip-template>
+						</md-chips>
+						<p>
+						  <md-checkbox ng-model="ctrl.autocompleteDemoRequireMatch">
+							Tell the autocomplete to require a match (when enabled you cannot create new chips)
+						  </md-checkbox>
+						</p>
+					</md-content>
+					
+					<header>
+						<h2>I am comfortable speaking in</h2>
+					</header>
+					<md-content class="md-padding" layout="column">
+						<md-chips ng-model="ctrl.selectedVegetables" md-autocomplete-snap
+								  md-transform-chip="ctrl.transformChip($chip)"
+								  md-require-match="ctrl.autocompleteDemoRequireMatch">
+							<md-autocomplete md-selected-item="ctrl.selectedItem" md-search-text="ctrl.searchText"
+								 md-items="item in ctrl.querySearch(ctrl.searchText)"
+								 md-item-text="item.name"
+								 placeholder="Search for a vegetable">
+								<span md-highlight-text="ctrl.searchText">{{item.name}} :: {{item.type}}</span>
+							</md-autocomplete>
+							<md-chip-template>
+								<span>
+								  <strong>{{$chip.name}}</strong>
+								  <em>({{$chip.type}})</em>
+								</span>
+							</md-chip-template>
+						</md-chips>
+						<p>
+						  <md-checkbox ng-model="ctrl.autocompleteDemoRequireMatch">
+							Tell the autocomplete to require a match (when enabled you cannot create new chips)
+						  </md-checkbox>
+						</p>
+					</md-content>
+					
+					<footer>
+						<a href="#client_two" class="button">Lets Video Call</a>
+					</footer>
 				</div>
 				<a href="#two" class="button style2 down anchored">Next</a>
 			</section>
 
 		<!-- Two -->
-			<section id="two" class="main style2 left dark fullscreen">
+			<section id="client_two" class="main style2 dark fullscreen">
 				<div class="content box style2">
 					<header>
-						<h2>Who I Am</h2>
+						<h2>Be Ready. We are catching someone for you</h2>
+						<h2>(Connecting....)</h2>
 					</header>
-					<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
-					Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
-					id varius justo euismod in. Curabitur egestas consectetur magna.</p>
+					
 				</div>
-				<a href="#work" class="button style2 down anchored">Next</a>
+				
 			</section>
 
 		<!-- Work -->
-			<section id="work" class="main style3 primary">
-				<div class="content">
-					<header>
-						<h2>My Work</h2>
-						<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
-						Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis
-						arcu, id varius justo euismod in. Curabitur egestas consectetur magna vitae.</p>
-					</header>
-
-					<!-- Gallery  -->
-						<div class="gallery">
-							<article class="from-left">
-								<a href="images/fulls/01.jpg" class="image fit"><img src="images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a>
-							</article>
-							<article class="from-right">
-								<a href="images/fulls/02.jpg" class="image fit"><img src="images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a>
-							</article>
-							<article class="from-left">
-								<a href="images/fulls/03.jpg" class="image fit"><img src="images/thumbs/03.jpg" title="Air Lounge" alt="" /></a>
-							</article>
-							<article class="from-right">
-								<a href="images/fulls/04.jpg" class="image fit"><img src="images/thumbs/04.jpg" title="Carry on" alt="" /></a>
-							</article>
-							<article class="from-left">
-								<a href="images/fulls/05.jpg" class="image fit"><img src="images/thumbs/05.jpg" title="The sparkling shell" alt="" /></a>
-							</article>
-							<article class="from-right">
-								<a href="images/fulls/06.jpg" class="image fit"><img src="images/thumbs/06.jpg" title="Bent IX" alt="" /></a>
-							</article>
-						</div>
-
-				</div>
-			</section>
-
-		<!-- Contact -->
-			<section id="contact" class="main style3 secondary">
-				<div class="content">
-					<header>
-						<h2>Say Hello.</h2>
-						<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.</p>
-					</header>
-					<div class="box">
-						<form method="post" action="#">
-							<div class="field half first"><input type="text" name="name" placeholder="Name" /></div>
-							<div class="field half"><input type="email" name="email" placeholder="Email" /></div>
-							<div class="field"><textarea name="message" placeholder="Message" rows="6"></textarea></div>
-							<ul class="actions">
-								<li><input type="submit" value="Send Message" /></li>
-							</ul>
-						</form>
-					</div>
-				</div>
-			</section>
+			
 
 		<!-- Footer -->
 			<footer id="footer">
@@ -175,7 +184,7 @@
 					</ul>
 
 			</footer>
-
+</div>
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.poptrox.min.js"></script>
@@ -185,6 +194,7 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/app.js"></script>
 
 	</body>
 </html>
