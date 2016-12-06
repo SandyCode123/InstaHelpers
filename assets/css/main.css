@@ -1923,7 +1923,7 @@
 			background-attachment: scroll !important;
 		}
 
-		@media screen and (max-width: 2510px) {
+		@media screen and (max-width: 2500px) {
 
 			.main.style2 .content {
 				width: 80%; /* 40% */
