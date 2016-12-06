@@ -1923,18 +1923,12 @@
 			background-attachment: scroll !important;
 		}
 
-		@media screen and (max-width: 2500px) {
-
-			.main.style2 .content {
-				width: 80%; /* 40% */
-			}
-
-		}
 		
+		/*
 		@media screen and (max-width: 1920px) {
 
 			.main.style2 .content {
-				width: 80%; /* 40% */
+				width: 80%; 
 			}
 
 		}
@@ -1942,7 +1936,7 @@
 		@media screen and (max-width: 1280px) {
 
 			.main.style2 .content {
-				width: 80%; /* 50% */
+				width: 80%; 
 			}
 
 		}
@@ -1950,10 +1944,14 @@
 		@media screen and (max-width: 1000px) {
 
 			.main.style2 .content {
-				width: 80%; /* 60% */
+				width: 80%; 
 			}
 
 		}
+		*/
+		.main.style2 .content {
+				width: 80%; 
+			}
 		
 		@media screen and (max-width: 736px) {
 
