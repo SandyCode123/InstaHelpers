@@ -24,6 +24,7 @@
 
 	body {
 		line-height: 1;
+		
 	}
 
 	ol, ul {
@@ -67,9 +68,18 @@
 	}
 
 	body {
-		background: #ffffff;
+		/*background: #ffffff;*/
 		height: 100%;
-		min-width: 320px;
+		min-width: 320px;	
+	}
+	
+	.root{
+		background-color: #935d8c;
+		background-image: url("images/overlay.png"), -moz-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
+		background-image: url("images/overlay.png"), -webkit-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
+		background-image: url("images/overlay.png"), -ms-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
+		background-image: url("images/overlay.png"), -o-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
+		background-image: url("images/overlay.png"), linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
 	}
 
 		body.is-loading *, body.is-loading *:before, body.is-loading *:after {
@@ -526,7 +536,7 @@
 		}
 
 	h1, h2, h3, h4, h5, h6 {
-		font-weight: 900;
+		/*font-weight: 900;*/
 		color: inherit;
 		letter-spacing: -0.0325em;
 	}
@@ -638,19 +648,23 @@
 		-webkit-transition: background-color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out;
-		background-color: #98c593;
-		border: 0;
-		border-radius: 3.5em;
-		color: #ffffff;
+		background-color: white;
+		
+		border: solid 1px #dee0e3;
+		
+		border-radius: 4px;
+		color: black !important;
 		cursor: pointer;
 		display: inline-block;
-		height: 3.5em;
-		line-height: 3.5em;
+		height: 3em;
+		line-height: 3em;
 		outline: 0;
 		padding: 0 2em 0 2em;
 		position: relative;
 		text-align: center;
 		text-decoration: none;
+		white-space: nowrap;
+		
 	}
 
 		input[type="button"].down,
@@ -2106,7 +2120,7 @@
 /* Intro */
 
 	#intro {
-		background: url("images/overlay.png"), url("../../images/intro.jpg");
+		/*background: url("images/overlay.png"), url("../../images/intro.jpg");*/
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed !important;
 		background-position: top left, bottom center;
@@ -2116,7 +2130,7 @@
 /* One */
 
 	#client_one {
-		background: url("images/overlay.png"), url("../../images/one.jpg");
+		/*background: url("images/overlay.png"), url("../../images/one.jpg");*/
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed !important;
 		background-position: top left, center center;
@@ -2125,7 +2139,7 @@
 /* Two */
 
 	#client_two {
-		background: url("images/overlay.png"), url("../../images/two.jpg");
+		/*background: url("images/overlay.png"), url("../../images/two.jpg");*/
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed !important;
 		background-position: top left, center center;
@@ -2256,5 +2270,11 @@ text-align: justify;
     padding: 3.5em 2.5em 3.5em 2.5em;
 }
 
-
-
+#intro h1 {
+			font-weight: 100;
+			color: gold;
+			font-size: larger;
+		  }
+#clientsection h2{
+	color:green;
+}
