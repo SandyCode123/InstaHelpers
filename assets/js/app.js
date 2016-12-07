@@ -1,7 +1,10 @@
 var instaModule=angular.module('instahelpers', ['ngMaterial','ngAria','ngAnimate', 'ngMessages', 'material.svgAssetsCache']);
 instaModule.controller('mainController',['$scope','$http','$timeout', '$q',function($scope,$http,$timeout,$q){
 	
-	
+	$scope.clientPartSelected=false;
+	$scope.developerPartSelected=false;
+	$scope.clientConnectionPart=false;
+	$scope.developerInstaFilterPart=false;
 	// Skill selection chip code
 	
     var self = this;
@@ -55,12 +58,12 @@ instaModule.controller('mainController',['$scope','$http','$timeout', '$q',funct
     function loadVegetables() {
       var veggies = [
         {
-          'name': 'Broccoli',
-          'type': 'Brassica'
+          'name': 'Spring',
+          'type': 'Framework'
         },
         {
-          'name': 'Cabbage',
-          'type': 'Brassica'
+          'name': 'J2EE',
+          'type': 'Java'
         },
         {
           'name': 'Carrot',
@@ -84,5 +87,27 @@ instaModule.controller('mainController',['$scope','$http','$timeout', '$q',funct
     }
   
   
+    // on click of client selection button
+	$scope.clientButtonClick=function(){
+		$scope.clientPartSelected=true;
+		$scope.developerPartSelected=false;
+	}
+	
+	$scope.clientNext=function(){
+		$scope.clientConnectionPart=true;
+	}
+	
+	$scope.developerButtonClick=function(){
+		$scope.developerPartSelected=true;
+		$scope.clientPartSelected=false;
+	}
+  
+	$scope.developerNext=function(option){
+		if(option==1){
+			$scope.developerInstaFilterPart=true;
+		}else if(option==2){
+			//$scope.developerInstaFilterPart=true;
+		}
+	}
   
 }])
