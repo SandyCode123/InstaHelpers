@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Big Picture by HTML5 UP</title>
+		<title>We are InstaHelpers</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -26,17 +26,16 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 	</head>
 	<body ng-app="instahelpers">
-<div ng-controller="mainController as ctrl">
+<div ng-controller="mainController as ctrl" class="root">
 		<!-- Header -->
 			<header id="header">
-				<h1>Big Picture</h1>
+				<h1>InstaHelpers</h1>
 				<nav>
 					<ul>
-						<li><a href="#intro">Intro</a></li>
-						<li><a href="#one">What I Do</a></li>
-						<li><a href="#two">Who I Am</a></li>
-						<li><a href="#work">My Work</a></li>
-						<li><a href="#contact">Contact</a></li>
+						<li><a href="#intro">Register</a></li>
+						<li><a href="#one">Login</a></li>
+						<li><a href="#two">Profile</a></li>
+						
 					</ul>
 				</nav>
 			</header>
@@ -44,14 +43,14 @@
 		<!-- Intro -->
 			<section id="intro" class="main style1 dark fullscreen">
 				<div class="content">
-					<header>
+					<h1>
 						Tell us what you're looking for.
-					</header>
+					</h1>
 					<div class="main-selection">
 							<article class="from-left intro-article">
 								
 								<div>
-									<i class="fa fa-user"></i>
+									<img src="assets/css/icons/online_red.png" />
 								</div>
 								<div>
 									<header>I want to help.</header>
@@ -60,7 +59,7 @@
 									
 								</div>
 								<footer>
-									<a href="#two" class="button">Let's Do It</a>
+									<a href="#developer_one" class="button" ng-click="developerButtonClick()">Let's Do It</a>
 								</footer>
 								
 							</article>
@@ -69,14 +68,14 @@
 							<article class="from-right intro-article">
 								
 								<div>
-									<i class="fa fa-user"></i>
+									<img src="assets/css/icons/online.png" />
 								</div>
 								<div>
 									<header>I need help.</header>
 									<p>We will pickup someone for you. Go on Instant Video conference to solve the issue. Just provide genuine feedback to the solution. We do not want anything in return.</p>
 								</div>
 								<footer>
-									<a href="#client_one" class="button">Let's Do It</a>
+									<a href="#client_one" class="button" ng-click="clientButtonClick()">Let's Do It</a>
 								</footer>
 							</article>
 							
@@ -85,31 +84,30 @@
 					
 				</div>
 			</section>
-
+<div id="clientsection" ng-show="clientPartSelected">
 		<!-- One -->
 			<section id="client_one" class="main style2 right dark fullscreen">
 				<div class="content box style2">
 					<header>
 						<h2>My Question is related to</h2>
 					</header>
-					<md-content class="md-padding" layout="column">
+					<md-content class="md-padding" layout="column" style="background-color:white">
 						<md-chips ng-model="ctrl.selectedVegetables" md-autocomplete-snap
 								  md-transform-chip="ctrl.transformChip($chip)"
 								  md-require-match="ctrl.autocompleteDemoRequireMatch">
 							<md-autocomplete md-selected-item="ctrl.selectedItem" md-search-text="ctrl.searchText"
 								 md-items="item in ctrl.querySearch(ctrl.searchText)"
 								 md-item-text="item.name"
-								 placeholder="Search for a vegetable">
+								 placeholder="Search for a Skill" >
 								<span md-highlight-text="ctrl.searchText">{{item.name}} :: {{item.type}}</span>
 							</md-autocomplete>
-							<md-chip-template>
+							<md-chip-template style="color: orange;">
 								<span>
-								  <strong>{{$chip.name}}</strong>
+								  {{$chip.name}}
 								  <em>({{$chip.type}})</em>
 								</span>
 							</md-chip-template>
 						</md-chips>
-						
 					</md-content>
 					
 					<header>
@@ -136,14 +134,14 @@
 					</md-content>
 					
 					<footer>
-						<a href="#client_two" class="button">Lets Video Call</a>
+						<a href="#client_two" class="button" ng-click="clientNext()">Lets Video Call</a>
 					</footer>
 				</div>
 				
 			</section>
 
 		<!-- Two -->
-			<section id="client_two" class="main style2 left dark fullscreen">
+			<section ng-show="clientConnectionPart" id="client_two" class="main style2 left dark fullscreen">
 				<div class="content box style2">
 					<header>
 						<h2>Be Ready. We are catching someone for you</h2>
@@ -155,7 +153,75 @@
 			</section>
 
 		<!-- Work -->
+			</div>
 			
+			<div ng-show="developerPartSelected">
+				<section id="developer_one" class="main style2 right dark fullscreen">
+				<div class="content box style2">
+					<header>
+						<h2>Shortly, You will be selected at random for live projects. No need to sit idle. Utilize your time well.</h2>
+						<h2>You can view ongoing Instas, help them and earn credits.</h2>
+					</header>
+					<footer>
+						<a href="#developer_two" class="button" ng-click="developerNext(1)">Wowww</a>
+					</footer>
+				</div>
+				
+				</section>
+				<section id="developer_two" ng-show="developerInstaFilterPart" class="main style2 left dark fullscreen">
+				<div class="content box style2">
+					<header>
+						<h2>Show me Instas in</h2>
+					</header>
+					<md-content class="md-padding" layout="column">
+						<md-chips ng-model="ctrl.selectedVegetables" md-autocomplete-snap
+								  md-transform-chip="ctrl.transformChip($chip)"
+								  md-require-match="ctrl.autocompleteDemoRequireMatch">
+							<md-autocomplete md-selected-item="ctrl.selectedItem" md-search-text="ctrl.searchText"
+								 md-items="item in ctrl.querySearch(ctrl.searchText)"
+								 md-item-text="item.name"
+								 placeholder="Search for a vegetable">
+								<span md-highlight-text="ctrl.searchText">{{item.name}} :: {{item.type}}</span>
+							</md-autocomplete>
+							<md-chip-template>
+								<span>
+								  <strong>{{$chip.name}}</strong>
+								  <em>({{$chip.type}})</em>
+								</span>
+							</md-chip-template>
+						</md-chips>
+						
+					</md-content>
+					
+					<header>
+						<h2>I understand</h2>
+					</header>
+					<md-content class="md-padding" layout="column">
+						<md-chips ng-model="ctrl.selectedVegetables" md-autocomplete-snap
+								  md-transform-chip="ctrl.transformChip($chip)"
+								  md-require-match="ctrl.autocompleteDemoRequireMatch">
+							<md-autocomplete md-selected-item="ctrl.selectedItem" md-search-text="ctrl.searchText"
+								 md-items="item in ctrl.querySearch(ctrl.searchText)"
+								 md-item-text="item.name"
+								 placeholder="Search for a vegetable">
+								<span md-highlight-text="ctrl.searchText">{{item.name}} :: {{item.type}}</span>
+							</md-autocomplete>
+							<md-chip-template>
+								<span>
+								  <strong>{{$chip.name}}</strong>
+								  <em>({{$chip.type}})</em>
+								</span>
+							</md-chip-template>
+						</md-chips>
+						
+					</md-content>
+					<footer>
+						<a href="#developer_two" class="button" ng-click="developerNext(2)">Wowww</a>
+					</footer>
+				</div>
+				
+				</section>
+			</div>
 
 		<!-- Footer -->
 			<footer id="footer">
