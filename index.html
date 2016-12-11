@@ -27,12 +27,13 @@
 	</head>
 	<body ng-app="instahelpers">
 <div ng-controller="mainController as ctrl" class="root">
+
 		<!-- Header -->
 			<header id="header">
 				<h1>InstaHelpers</h1>
 				<nav>
-					<ul>
-						<li><a href="#intro">Register</a></li>
+					<ul class="topnav" id="myTopnav">
+						<li><a href="#intro"  ng-click="showAdvanced($event)">Register</a></li>
 						<li><a href="#one">Login</a></li>
 						<li><a href="#two">Profile</a></li>
 						
@@ -44,7 +45,7 @@
 			<section id="intro" class="main style1 dark fullscreen">
 				<div class="content">
 					<h1>
-						Tell us what you're looking for.
+						Tell us what do you want to be.
 					</h1>
 					<div class="main-selection">
 							<article class="from-left intro-article">
@@ -53,13 +54,14 @@
 									<img src="assets/css/icons/online_red.png" />
 								</div>
 								<div>
-									<header>I want to help.</header>
-									<p>Are you tired bidding on freelancer sites to get the project? No worries.We are Different. We rotate Luck wheel for your selection to solve problem.We want to give your luck chance to reach our client.</p>
-									<p>Solve problems, get reward points on success and we will help you get your dream job.</p>
+									<header>Become Instant Helper.</header>
+									<p>Are you tired bidding on freelancers to get the project? No worries, no more bids now.</p>
+									<p>Let's be InstaHelpers. We will select you at random and give equal opportunity to work for our clients. You do not need to have any profile, instead we help you build strong profile and get dream job.</p>
+									<p>Solve problems, get career points and we will help you get your dream job.</p>
 									
 								</div>
 								<footer>
-									<a href="#developer_one" class="button" ng-click="developerButtonClick()">Let's Do It</a>
+									<a href="#developer_one" class="button" ng-click="developerButtonClick()">Let's InstaHelp</a>
 								</footer>
 								
 							</article>
@@ -71,11 +73,13 @@
 									<img src="assets/css/icons/online.png" />
 								</div>
 								<div>
-									<header>I need help.</header>
-									<p>We will pickup someone for you. Go on Instant Video conference to solve the issue. Just provide genuine feedback to the solution. We do not want anything in return.</p>
+									<header>Need Instant Help.</header>
+									<p>Are you stuck? No money to pay freelancer? Want to solve it right now?</p>
+									<p>We will pickup InstaHelper for you. Go on Instant Video conference to discuss with them.</p>
+									<p>Just provide genuine feedback to the solution. That's our fees.</p>
 								</div>
 								<footer>
-									<a href="#client_one" class="button" ng-click="clientButtonClick()">Let's Do It</a>
+									<a href="#client_one" class="button" ng-click="clientButtonClick()">Get InstaHelp</a>
 								</footer>
 							</article>
 							
@@ -88,39 +92,39 @@
 		<!-- One -->
 			<section id="client_one" class="main style2 right dark fullscreen">
 				<div class="content box style2">
-					<header>
-						<h2>My Question is related to</h2>
-					</header>
-					<md-content class="md-padding" layout="column" style="background-color:white">
+					
+						<h2>InstaHelper should know</h2>
+					
+					<md-content class="md-custom-theme" layout="row">
 						<md-chips ng-model="ctrl.selectedVegetables" md-autocomplete-snap
 								  md-transform-chip="ctrl.transformChip($chip)"
 								  md-require-match="ctrl.autocompleteDemoRequireMatch">
 							<md-autocomplete md-selected-item="ctrl.selectedItem" md-search-text="ctrl.searchText"
 								 md-items="item in ctrl.querySearch(ctrl.searchText)"
 								 md-item-text="item.name"
-								 placeholder="Search for a Skill" >
+								 placeholder="Select Skill" >
 								<span md-highlight-text="ctrl.searchText">{{item.name}} :: {{item.type}}</span>
 							</md-autocomplete>
-							<md-chip-template style="color: orange;">
+							<md-chip-template>
 								<span>
-								  {{$chip.name}}
+								  <strong>{{$chip.name}}</strong>
 								  <em>({{$chip.type}})</em>
 								</span>
 							</md-chip-template>
 						</md-chips>
 					</md-content>
+					<br>
 					
-					<header>
 						<h2>I am comfortable speaking in</h2>
-					</header>
-					<md-content class="md-padding" layout="column">
+					
+					<md-content class="md-custom-theme" layout="column">
 						<md-chips ng-model="ctrl.selectedVegetables" md-autocomplete-snap
 								  md-transform-chip="ctrl.transformChip($chip)"
 								  md-require-match="ctrl.autocompleteDemoRequireMatch">
 							<md-autocomplete md-selected-item="ctrl.selectedItem" md-search-text="ctrl.searchText"
 								 md-items="item in ctrl.querySearch(ctrl.searchText)"
 								 md-item-text="item.name"
-								 placeholder="Search for a vegetable">
+								 placeholder="Select Spoken Language">
 								<span md-highlight-text="ctrl.searchText">{{item.name}} :: {{item.type}}</span>
 							</md-autocomplete>
 							<md-chip-template>
@@ -132,7 +136,29 @@
 						</md-chips>
 						
 					</md-content>
+					<br>
 					
+						<h2>Headline</h2>
+					
+					<md-content class="md-custom-theme" layout="column">
+						<md-chips ng-model="ctrl.selectedVegetables" md-autocomplete-snap
+								  md-transform-chip="ctrl.transformChip($chip)"
+								  md-require-match="ctrl.autocompleteDemoRequireMatch">
+							<md-autocomplete md-selected-item="ctrl.selectedItem" md-search-text="ctrl.searchText"
+								 md-items="item in ctrl.querySearch(ctrl.searchText)"
+								 md-item-text="item.name"
+								 placeholder="Select Spoken Language">
+								<span md-highlight-text="ctrl.searchText">{{item.name}} :: {{item.type}}</span>
+							</md-autocomplete>
+							<md-chip-template>
+								<span>
+								  <strong>{{$chip.name}}</strong>
+								  <em>({{$chip.type}})</em>
+								</span>
+							</md-chip-template>
+						</md-chips>
+						
+					</md-content>
 					<footer>
 						<a href="#client_two" class="button" ng-click="clientNext()">Lets Video Call</a>
 					</footer>
@@ -143,11 +169,14 @@
 		<!-- Two -->
 			<section ng-show="clientConnectionPart" id="client_two" class="main style2 left dark fullscreen">
 				<div class="content box style2">
-					<header>
-						<h2>Be Ready. We are catching someone for you</h2>
-						<h2>(Connecting....)</h2>
-					</header>
-					
+					  <div class="sampleContainer">
+						  <header>
+							<h2>We are catching <b>InstaHelper</b> for you..Be Ready with mic and webcam.</h2>
+						  </header>
+						  <div class="cssload-container" style="display:none;">
+							<div class="cssload-item cssload-ventilator"></div>
+						  </div>
+					  </div>
 				</div>
 				
 			</section>
@@ -155,32 +184,42 @@
 		<!-- Work -->
 			</div>
 			
-			<div ng-show="developerPartSelected">
+			<div id="developersection" ng-show="developerPartSelected">
 				<section id="developer_one" class="main style2 right dark fullscreen">
 				<div class="content box style2">
+					
 					<header>
-						<h2>Shortly, You will be selected at random for live projects. No need to sit idle. Utilize your time well.</h2>
-						<h2>You can view ongoing Instas, help them and earn credits.</h2>
+						<div style="display: inline-flex;text-align: left;">
+							<div class="cssload-container" style="display:none;">
+								<div class="cssload-item cssload-ventilator"></div>
+							</div>
+							<div>
+							<h2>Shortly, You will be selected at <b>Random</b> for live projects. Stay Here..</h2>
+							</div>
+						</div>
+						<br>
+						<br>
+						<h2 style="text-align:left;">No need to sit idle. Utilize your time well. You can participate in live Instas, help them and earn <b>Career Points</b>.</h2>
 					</header>
 					<footer>
-						<a href="#developer_two" class="button" ng-click="developerNext(1)">Wowww</a>
+						<a href="#developer_two" class="button" ng-click="developerNext(1)">Connect To Instas</a>
 					</footer>
 				</div>
 				
 				</section>
 				<section id="developer_two" ng-show="developerInstaFilterPart" class="main style2 left dark fullscreen">
 				<div class="content box style2">
-					<header>
+					
 						<h2>Show me Instas in</h2>
-					</header>
-					<md-content class="md-padding" layout="column">
+					
+					<md-content class="md-custom-theme" layout="column">
 						<md-chips ng-model="ctrl.selectedVegetables" md-autocomplete-snap
 								  md-transform-chip="ctrl.transformChip($chip)"
 								  md-require-match="ctrl.autocompleteDemoRequireMatch">
 							<md-autocomplete md-selected-item="ctrl.selectedItem" md-search-text="ctrl.searchText"
 								 md-items="item in ctrl.querySearch(ctrl.searchText)"
 								 md-item-text="item.name"
-								 placeholder="Search for a vegetable">
+								 placeholder="Select the Skill">
 								<span md-highlight-text="ctrl.searchText">{{item.name}} :: {{item.type}}</span>
 							</md-autocomplete>
 							<md-chip-template>
@@ -192,18 +231,18 @@
 						</md-chips>
 						
 					</md-content>
+					<br>
 					
-					<header>
 						<h2>I understand</h2>
-					</header>
-					<md-content class="md-padding" layout="column">
+					
+					<md-content class="md-custom-theme" layout="column">
 						<md-chips ng-model="ctrl.selectedVegetables" md-autocomplete-snap
 								  md-transform-chip="ctrl.transformChip($chip)"
 								  md-require-match="ctrl.autocompleteDemoRequireMatch">
 							<md-autocomplete md-selected-item="ctrl.selectedItem" md-search-text="ctrl.searchText"
 								 md-items="item in ctrl.querySearch(ctrl.searchText)"
 								 md-item-text="item.name"
-								 placeholder="Search for a vegetable">
+								 placeholder="Search the Language">
 								<span md-highlight-text="ctrl.searchText">{{item.name}} :: {{item.type}}</span>
 							</md-autocomplete>
 							<md-chip-template>
@@ -216,10 +255,48 @@
 						
 					</md-content>
 					<footer>
-						<a href="#developer_two" class="button" ng-click="developerNext(2)">Wowww</a>
+						<a href="#developer_three" class="button" ng-click="developerNext(2)">Show Me</a>
 					</footer>
 				</div>
 				
+				</section>
+				<section id="developer_three" ng-show="InstaListShow" class="main style2 dark fullscreen">
+					<div class="content box style2">
+					  
+					  <div flex-gt-sm="100" flex="" class="InstaSearchBox">
+						<md-toolbar layout="row" class="">
+						  <div class="md-toolbar-tools">
+							<span><b>Showing Instas for: <span class="radioValue">{{ data.group1 }}</span></b></span>
+						  </div>
+						</md-toolbar>
+						
+						<md-content>
+						  <md-list flex="">
+							<md-subheader class="md-no-sticky">
+								<form ng-submit="submit()" ng-cloak="">
+									
+									<md-radio-group ng-model="data.group1" layout="row">
+									  <md-radio-button value="Java" class="md-primary">Java</md-radio-button>
+									  <md-radio-button value="PHP"> PHP </md-radio-button>
+									  <md-radio-button value="All">All</md-radio-button>
+									</md-radio-group>
+									<hr>
+								</form>
+							
+							</md-subheader>
+							<md-list-item class="md-3-line" ng-repeat="item in todos" ng-click="null">
+							  <img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
+							  <div class="md-list-item-text" layout="column">
+								<h3>{{ item.topic }}</h3>
+								<h4>{{ item.skills }}</h4>
+								<p>{{ item.InstaDuration }} passed</p>
+								<p style="float:right">{{ item.activeParticipants }} InstaHelpers</p>
+							  </div>
+							</md-list-item>
+						  </md-list>
+						</md-content>
+					  </div>						
+					</div>
 				</section>
 			</div>
 
@@ -242,6 +319,51 @@
 					</ul>
 
 			</footer>
+			<script type="text/ng-template" id="dialog1.tmpl.html"><md-dialog aria-label="Mango (Fruit)">
+		  <form ng-cloak>
+			<md-toolbar>
+			  <div class="md-toolbar-tools">
+				<h2>Mango (Fruit)</h2>
+				<span flex></span>
+				<md-button class="md-icon-button" ng-click="cancel()">
+				  <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+				</md-button>
+			  </div>
+			</md-toolbar>
+
+			<md-dialog-content>
+			  <div class="md-dialog-content">
+				<h2>Using .md-dialog-content class that sets the padding as the spec</h2>
+				<p>
+				  The mango is a juicy stone fruit belonging to the genus Mangifera, consisting of numerous tropical fruiting trees, cultivated mostly for edible fruit. The majority of these species are found in nature as wild mangoes. They all belong to the flowering plant family Anacardiaceae. The mango is native to South and Southeast Asia, from where it has been distributed worldwide to become one of the most cultivated fruits in the tropics.
+				</p>
+
+				<img style="margin: auto; max-width: 100%;" alt="Lush mango tree" src="img/mangues.jpg">
+
+				<p>
+				  The highest concentration of Mangifera genus is in the western part of Malesia (Sumatra, Java and Borneo) and in Burma and India. While other Mangifera species (e.g. horse mango, M. foetida) are also grown on a more localized basis, Mangifera indica&mdash;the "common mango" or "Indian mango"&mdash;is the only mango tree commonly cultivated in many tropical and subtropical regions.
+				</p>
+				<p>
+				  It originated in Indian subcontinent (present day India and Pakistan) and Burma. It is the national fruit of India, Pakistan, and the Philippines, and the national tree of Bangladesh. In several cultures, its fruit and leaves are ritually used as floral decorations at weddings, public celebrations, and religious ceremonies.
+				</p>
+			  </div>
+			</md-dialog-content>
+
+			<md-dialog-actions layout="row">
+			  <md-button href="http://en.wikipedia.org/wiki/Mango" target="_blank" md-autofocus>
+				More on Wikipedia
+			  </md-button>
+			  <span flex></span>
+			  <md-button ng-click="answer('not useful')">
+			   Not Useful
+			  </md-button>
+			  <md-button ng-click="answer('useful')">
+				Useful
+			  </md-button>
+			</md-dialog-actions>
+		</form>
+</md-dialog>
+</script>
 </div>
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
