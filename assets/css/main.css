@@ -563,7 +563,7 @@
 
 	strong, b {
 		font-weight: 900;
-		color: inherit;
+		color: #E7746F;
 	}
 
 	em, i {
@@ -592,7 +592,7 @@
 
 	hr {
 		border: 0;
-		border-top: solid 1px #e5e6e7;
+		border-top: solid 1px darkmagenta;
 	}
 
 	blockquote {
@@ -2571,43 +2571,33 @@ md-content{
 	background-color:initial !important;
 }
 
-/* Insta Search Page Radio Button CSS */
-.radioButtondemoBasicUsage body {
-  padding: 20px; }
-
-.radioButtondemoBasicUsage hr {
-  margin-left: -20px;
-  opacity: 0.3; }
-
-.radioButtondemoBasicUsage md-radio-group {
-  width: 150px; }
-
-.radioButtondemoBasicUsage p:last-child {
-  padding-bottom: 50px; }
-
-.radioButtondemoBasicUsage [ng-controller] {
-  padding: 0 20px; }
-
-.radioButtondemoBasicUsage .radioValue {
-  margin-left: 5px;
-  color: #0f9d58;
-  font-weight: bold;
-  padding: 5px; }
-
-.radioButtondemoBasicUsage md-icon {
-  margin: 0 20px 20px;
-  width: 128px;
-  height: 128px; }
-
-.radioButtondemoBasicUsage .ipsum {
-  color: saddlebrown;
-  font-size: 0.9em; }
   
-  b {
-	  color: #4ACAA8
-  }
-  
-  .InstaSearchBox md-toolbar{
-	  color: #4ACAA8 !important;
-	  background-color:white !important;
-  }
+  .md-button {
+  padding: 0 6px 0 6px;
+  margin: 6px 8px 6px 8px;
+  min-width: 88px;
+  border-radius: 3px;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration:none;
+  border: none;
+  outline: none;
+}
+
+.skill-default-button{
+	  background: beige !important;
+}
+
+.skill-selected-button{
+	  background: #e37682 !important;
+	  color:white !important;
+}
+
+md-list-item h3{
+	color:black !important;
+}
+
+#developer_three md-content{
+	height:400px;
+}
