@@ -264,26 +264,57 @@
 					<div class="content box style2">
 					  
 					  <div flex-gt-sm="100" flex="" class="InstaSearchBox">
-						<md-toolbar layout="row" class="">
-						  <div class="md-toolbar-tools">
-							<span><b>Showing Instas for: <span class="radioValue">{{ data.group1 }}</span></b></span>
-						  </div>
-						</md-toolbar>
 						
-						<md-content>
-						  <md-list flex="">
-							<md-subheader class="md-no-sticky">
-								<form ng-submit="submit()" ng-cloak="">
+						 
+							<div><h2>Showing Instas for <span class="radioValue">{{ data.group1 }}</span></h2></div>
+							<hr>
+							<div>
+							<form ng-submit="submit()" ng-cloak="" style="margin-bottom:0px">
 									
+									<md-button class=".md-button skill-selected-button">All Skills</md-button>
+									<md-button class=".md-button skill-default-button">Java</md-button>
+									
+									<md-button class=".md-button skill-default-button">PHP</md-button>
+									<md-button class=".md-button skill-default-button">Wordpress</md-button>
+									<md-button class=".md-button skill-default-button">HTML</md-button>
+									<md-button class=".md-button skill-default-button">CSS</md-button>
+									<md-button class=".md-button skill-default-button">Javascript</md-button>
+									<md-button class=".md-button skill-default-button">WebTechnologies</md-button>
+									<md-button class=".md-button skill-default-button">Apache</md-button>
+									<md-button class=".md-button skill-default-button">Photoshop</md-button>
+									<md-button class=".md-button skill-default-button">Networking</md-button>
+									<md-button class=".md-button skill-default-button">Grails</md-button>
+									<!--
 									<md-radio-group ng-model="data.group1" layout="row">
 									  <md-radio-button value="Java" class="md-primary">Java</md-radio-button>
 									  <md-radio-button value="PHP"> PHP </md-radio-button>
 									  <md-radio-button value="All">All</md-radio-button>
 									</md-radio-group>
-									<hr>
+									-->
 								</form>
-							
-							</md-subheader>
+							</div>
+						  
+						  
+						
+						
+						<md-content>
+						  <md-list flex="">
+						  
+						    <!-- This section just to show loader when user clicks on any of the list record -->
+						    <md-list-item class="md-3-line">
+							  <div class="cssload-container" style="display:none;">
+								<div class="cssload-item cssload-ventilator"></div>
+							  </div>
+							  <div class="md-list-item-text" layout="column">
+								<h3>{{ todos[0].topic }}</h3>
+								<h4>{{ todos[0].skills }}</h4>
+								<p>{{ todos[0].InstaDuration }} passed</p>
+								<p style="float:right">{{ item.activeParticipants }} InstaHelpers</p>
+							  </div>
+							  <md-divider></md-divider>
+							</md-list-item>
+						  
+						  
 							<md-list-item class="md-3-line" ng-repeat="item in todos" ng-click="null">
 							  <img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
 							  <div class="md-list-item-text" layout="column">
@@ -292,6 +323,7 @@
 								<p>{{ item.InstaDuration }} passed</p>
 								<p style="float:right">{{ item.activeParticipants }} InstaHelpers</p>
 							  </div>
+							  <md-divider></md-divider>
 							</md-list-item>
 						  </md-list>
 						</md-content>
