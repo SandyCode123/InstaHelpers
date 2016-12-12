@@ -151,7 +151,7 @@ instaModule.controller('mainController',['$scope','$http','$timeout', '$q','$mdD
   //  for Insta Search Page Radio Button
   
 	    $scope.data = {
-		  group1 : 'All'
+		  group1 : 'All Skills'
 		};
 
 		$scope.avatarData = [{
@@ -193,43 +193,13 @@ instaModule.controller('mainController',['$scope','$http','$timeout', '$q','$mdD
   
   
   // Angular List for Insta Search By Developer.
-   var imagePath = 'img/list/60.jpeg';
+   var imagePath = 'images/avtar-image.jpeg';
 
-    $scope.phones = [
-      {
-        type: 'Home',
-        number: '(555) 251-1234',
-        options: {
-          icon: 'communication:phone'
-        }
-      },
-      {
-        type: 'Cell',
-        number: '(555) 786-9841',
-        options: {
-          icon: 'communication:phone',
-          avatarIcon: true
-        }
-      },
-      {
-        type: 'Office',
-        number: '(555) 314-1592',
-        options: {
-          face : imagePath
-        }
-      },
-      {
-        type: 'Offset',
-        number: '(555) 192-2010',
-        options: {
-          offset: true,
-          actionIcon: 'communication:phone'
-        }
-      }
-    ];
+    
     $scope.todos = [
       {
         face : imagePath,
+		who  : 'Sandip',
         skills: 'Java, Wordpress',
 		InstaLanguage: 'Hindi',
         topic: 'I want to create plugin',
@@ -238,6 +208,7 @@ instaModule.controller('mainController',['$scope','$http','$timeout', '$q','$mdD
       },
       {
         face : imagePath,
+		who  : 'Sandip',
         skills: 'Java, Wordpress',
 		InstaLanguage: 'Hindi',
         topic: 'I want to create plugin',
@@ -246,6 +217,7 @@ instaModule.controller('mainController',['$scope','$http','$timeout', '$q','$mdD
       },
       {
        face : imagePath,
+	   who  : 'Sandip',
         skills: 'Java, Wordpress',
 		InstaLanguage: 'Hindi',
         topic: 'I want to create plugin',
@@ -254,6 +226,7 @@ instaModule.controller('mainController',['$scope','$http','$timeout', '$q','$mdD
       },
       {
         face : imagePath,
+		who  : 'Sandip',
         skills: 'Java, Wordpress',
 		InstaLanguage: 'Hindi',
         topic: 'I want to create plugin',
@@ -262,6 +235,7 @@ instaModule.controller('mainController',['$scope','$http','$timeout', '$q','$mdD
       },
       {
         face : imagePath,
+		who  : 'Sandip',
         skills: 'Java, Wordpress',
 		InstaLanguage: 'Hindi',
         topic: 'I want to create plugin',
