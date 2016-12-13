@@ -2291,7 +2291,7 @@ text-align: justify;
 	background-color: white;
     border-radius: 0px;
 }
-#clientsection .button, #developersection .button{
+#clientsection .button, #developersection .button, md-dialog .button{
 	/*background-color:#a8cea4*/
 	background-color:#E7746F;
 	color:white !important;
@@ -2600,4 +2600,49 @@ md-list-item h3{
 
 #developer_three md-content{
 	height:400px;
+}
+
+/* SignUp Form CSS */
+.inputdemoErrors .inputErrorsApp {
+  min-height: 48px; 
+  }
+
+.inputdemoErrors md-input-container > p {
+  font-size: 0.8em;
+  text-align: left;
+  width: 100%; }
+
+.inputdemoIcons md-input-container:not(.md-input-invalid) > md-icon.email {
+    color: green; 
+}
+.inputdemoIcons md-input-container.not(.md-input-invalid) > md-icon.username,
+.inputdemoIcons md-input-container.not(.md-input-invalid) > md-icon.password,
+.inputdemoIcons md-input-container.not(.md-input-invalid) > md-icon.email,
+.inputdemoIcons md-input-container.not(.md-input-invalid) > md-icon.firstnameicon {
+    color: dodgerblue; 
+}
+ 
+ .inputdemoIcons md-input-container.md-input-invalid > md-icon.username,
+.inputdemoIcons md-input-container.md-input-invalid > md-icon.password,
+.inputdemoIcons md-input-container.md-input-invalid > md-icon.email,
+  .inputdemoIcons md-input-container.md-input-invalid > md-icon.firstnameicon {
+    color: red; 
+}
+	
+md-dialog{
+	width:50%;	
+}
+
+.signupbutton{
+	text-align:center;
+}
+
+.horizontal-text-divider
+{
+	display: flex;
+    align-items: center;
+}
+
+.dialog-header{
+	text-align:center;
 }
