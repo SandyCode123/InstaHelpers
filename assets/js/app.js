@@ -120,16 +120,11 @@ instaModule.controller('mainController',['$scope','$http','$timeout', '$q','$mdD
 	$scope.showAdvanced = function(ev) {
     $mdDialog.show({
       controller: DialogController,
-      templateUrl: 'dialog1.tmpl.html',
+      templateUrl: 'signup_dialog',
       parent: angular.element(document.body),
       targetEvent: ev,
       clickOutsideToClose:true,
       fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
-    })
-    .then(function(answer) {
-      $scope.status = 'You said the information was "' + answer + '".';
-    }, function() {
-      $scope.status = 'You cancelled the dialog.';
     });
   };
   
@@ -243,5 +238,11 @@ instaModule.controller('mainController',['$scope','$http','$timeout', '$q','$mdD
 		activeParticipants: 2
       },
     ];
+	
+	// SignUp Form
+	$scope.project = {
+		description: 'Nuclear Missile Defense System',
+		rate: 500
+	};
   
-}])
+}]);
