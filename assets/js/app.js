@@ -128,8 +128,35 @@ instaModule.controller('mainController',['$scope','$http','$timeout', '$q','$mdD
     });
   };
   
+  // Login Tab
+	$scope.showLoginForm = function(ev) {
+    $mdDialog.show({
+      controller: LoginDialogController,
+      templateUrl: 'login_dialog',
+      parent: angular.element(document.body),
+      targetEvent: ev,
+      clickOutsideToClose:true,
+      fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+    });
+  };
+  
   // Controller for Signup Page.
   function DialogController($scope, $mdDialog) {
+    $scope.hide = function() {
+      $mdDialog.hide();
+    };
+
+    $scope.cancel = function() {
+      $mdDialog.cancel();
+    };
+
+    $scope.answer = function(answer) {
+      $mdDialog.hide(answer);
+    };
+  }
+  
+  // Controller for Signup Page.
+  function LoginDialogController($scope, $mdDialog) {
     $scope.hide = function() {
       $mdDialog.hide();
     };
@@ -241,6 +268,11 @@ instaModule.controller('mainController',['$scope','$http','$timeout', '$q','$mdD
 	
 	// SignUp Form
 	$scope.project = {
+		description: 'Nuclear Missile Defense System',
+		rate: 500
+	};
+	
+	$scope.login = {
 		description: 'Nuclear Missile Defense System',
 		rate: 500
 	};
