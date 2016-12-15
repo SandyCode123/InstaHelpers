@@ -575,7 +575,12 @@
 		-webkit-transition: color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out;
-		color: #98c593;
+		/*color: #98c593;*/
+		color:green;
+	}
+	
+	a:hover{
+		border-bottom: 1px solid;
 	}
 
 	sub {
@@ -2633,7 +2638,14 @@ md-dialog{
 	width:50%;	
 }
 
-.signupbutton{
+@media screen and (max-width: 736px) {
+md-dialog{
+	width:100%;	
+}
+}
+
+
+.dialogbutton{
 	text-align:center;
 }
 
@@ -2646,3 +2658,10 @@ md-dialog{
 .dialog-header{
 	text-align:center;
 }
+
+
+md-checkbox.md-checked ._md-icon {
+    background: #E7746F !important;
+}
+
+
