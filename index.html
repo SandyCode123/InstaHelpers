@@ -36,7 +36,7 @@
 				<nav>
 					<ul class="topnav" id="myTopnav">
 						<li><a href="#intro"  ng-click="showAdvanced($event)">Register</a></li>
-						<li><a href="#one">Login</a></li>
+						<li><a href="#one"    ng-click="showLoginForm($event)">Login</a></li> 
 						<li><a href="#two">Profile</a></li>
 						
 					</ul>
@@ -363,23 +363,26 @@
 			
 	
 					<md-content layout-padding>
-		<form name="projectForm">
+		<form name="signUpForm">
 
 		  
 		  <div layout="column">
 			Facebook/LinkedIn Integration API
 		  </div>
-		  <div class="horizontal-divider horizontal-text-divider"><hr style="width:50%">Or<hr style="width:50%"></div>
+		  <div class="horizontal-divider horizontal-text-divider"><hr style="width:50%;margin-right:4px">OR<hr style="width:50%;margin-left:4px"></div>
 		  <div layout="column">
-			<md-input-container flex="100">
-			  <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="firstnameicon"></md-icon>
+		  
+			
+			 <div layout="row">
+			<md-input-container flex="50">
+			 <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="firstnameicon"></md-icon>
 			  <label>First Name</label>
 			  <input required name="Name" ng-model="project.FirstName">
 			  <div ng-messages="signUpForm.FirstName.$error">
 				<div ng-message="required">This is required.</div>
 			  </div>
 			</md-input-container>
-		    <md-input-container class="md-block">
+		    <md-input-container flex="50">
 				<md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon>
 				<label>Email</label>
 				<input required type="email" name="Email" ng-model="project.Email"
@@ -391,8 +394,9 @@
 				  </div>
 				</div>
 			  </md-input-container>
-		
-			<md-input-container flex="100">
+			</div>
+		    <div layout="row">
+			<md-input-container flex="50">
 			  <label>User Name</label>
 			  <md-icon md-svg-src="assets/css/icons/ic_account_circle_black_24px.svg" class="username"></md-icon>
 			  <input required name="UserName" ng-model="project.UserName">
@@ -400,7 +404,7 @@
 				<div ng-message="required">This is required.</div>
 			  </div>
 			</md-input-container>
-			<md-input-container flex="100">
+			<md-input-container flex="50">
 			  <label>Password</label>
 			  <md-icon md-svg-src="assets/css/icons/ic_account_circle_black_24px.svg" class="password"></md-icon>
 			  <input type="password" required name="Password" ng-model="project.Password">
@@ -408,14 +412,77 @@
 				<div ng-message="required">This is required.</div>
 			  </div>
 			</md-input-container>
-			<md-input-container class="signupbutton">
-			   <a href="#" class="button" ng-click="">Sign Up</a>
+			</div>
+			
+			<md-input-container class="dialogbutton">
+			<md-button  type="submit" class="button">Sign Up</md-button>
+			   
 			</md-input-container>
-
 		  </div>
-		  
+		</form>
+	  </md-content>
+			</md-dialog>
+			
+			</script>
+			<script type="text/ng-template" id="login_dialog" class="signup_dialog">
+			
+			<md-dialog aria-label="Sign Up">
+			<div class="dialog-header">
+				<h2>Sign in Details</h2>
+			</div>
+			
+			
+	
+					<md-content layout-padding>
+		<form name="loginForm">
 
 		  
+		  <div layout="column">
+			Facebook/LinkedIn Integration API
+		  </div>
+		  <div class="horizontal-divider horizontal-text-divider"><hr style="width:50%;margin-right:4px">OR<hr style="width:50%;margin-left:4px"></div>
+		  <div layout="row">
+		  
+			
+		    <md-input-container flex="50">
+				<md-icon md-svg-src="img/icons/ic_email_24px.svg" class="loginid"></md-icon>
+				<label>Email/Username</label>
+				<input required type="text" name="loginid" ng-model="login.loginid"
+					   minlength="10" maxlength="100" />
+
+				<div ng-messages="loginForm.loginid.$error" role="alert">
+				  <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+					Your loginid must be between 10 and 100 characters.
+				  </div>
+				</div>
+			  </md-input-container>
+		
+			<md-input-container flex="50">
+			  <label>Password</label>
+			  <md-icon md-svg-src="assets/css/icons/ic_account_circle_black_24px.svg" class="password"></md-icon>
+			  <input type="password" required name="Password" ng-model="loginForm.Password">
+			  <div ng-messages="loginForm.Password.$error">
+				<div ng-message="required">This is required.</div>
+			  </div>
+			</md-input-container>
+			</div>
+			<div layout="row">
+			
+			<md-input-container flex="50" class="dialogbutton">
+				
+				<md-button  type="submit" class="button" style="float:left;">Login</md-button>
+				
+			</md-input-container>
+			<md-input-container flex="50" style="margin-left:24px;">
+			
+				<md-checkbox ng-model="loginForm.rememberMe" aria-label="Remember Me">
+				Remember Me
+				</md-checkbox>
+			</md-input-container>
+		  </div>
+		  <div>
+			    <a style="float:right">Forgot password?</a>
+				</div>
 		</form>
 	  </md-content>
 			</md-dialog>
